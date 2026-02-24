@@ -1,3 +1,5 @@
+"use client";
+import { use } from 'react';
 import PortalGallery from '../features/portal/PortalGallery'
 
 export default function HomePage() {
