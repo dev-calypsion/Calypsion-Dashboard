@@ -3,6 +3,7 @@ import Footer from "@/src/shared/components/Footer";
 import Header from "@/src/shared/components/Header";
 
 import type { Metadata } from "next";
+import CollaborationSection from '../features/portal/components/CollaborationSection';
 
 export const metadata: Metadata = {
   title: "Calypsion",
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className="bg-slate-950 text-slate-200 antialiased">
         <Header />
         {children}
+        <CollaborationSection />
         <Footer />
       </body>
     </html>
