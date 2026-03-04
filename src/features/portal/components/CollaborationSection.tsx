@@ -1,5 +1,6 @@
 "use client";
 
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
 export default function CollaborationSection() {
@@ -10,35 +11,45 @@ export default function CollaborationSection() {
     message: "",
   });
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-        const res = await fetch("/api/collaboration", {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify(form),
-        });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
 
-        const data = await res.json();
-        alert(data.message);
+    try {
+      await emailjs.send(
+        "service_r9o2uei",     // 🔹 Replace this
+        "template_yw4o09r",    // 🔹 Replace this
+        form,
+        "Y1h6UYGkeQ6YJI11w"      // 🔹 Replace this
+      );
 
-        // Reset form
-        setForm({
-            name: "",
-            company: "",
-            email: "",
-            message: "",
-        });
-    };
+      setSuccess(true);
 
+      // Reset form
+      setForm({
+        name: "",
+        company: "",
+        email: "",
+        message: "",
+      });
+
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert("Failed to send message ❌");
+    }
+
+    setLoading(false);
+  };
 
   return (
     <section className="bg-slate-900 border-t border-slate-800 py-20 px-6">
       <div className="max-w-5xl mx-auto text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white">
-          Let’s Build Your Smart Industrial Solution
+          Start Your Industrial Transformation
         </h2>
         <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
           Interested in deploying RTLS, predictive monitoring, or custom IoT
@@ -84,8 +95,10 @@ export default function CollaborationSection() {
         />
 
         <textarea
+          value={form.message}
           placeholder="Project Requirement / Message"
           rows={4}
+          required
           className="p-3 rounded-lg bg-slate-800 border border-slate-700 text-white"
           onChange={(e) =>
             setForm({ ...form, message: e.target.value })
@@ -94,10 +107,17 @@ export default function CollaborationSection() {
 
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition"
+          disabled={loading}
+          className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white py-3 rounded-lg font-medium transition"
         >
-          Request Collaboration
+          {loading ? "Sending..." : "Request Consultation"}
         </button>
+
+        {success && (
+          <p className="text-green-500 text-center">
+            ✅ Message sent successfully!
+          </p>
+        )}
       </form>
     </section>
   );

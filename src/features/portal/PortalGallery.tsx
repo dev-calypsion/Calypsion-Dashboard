@@ -1,22 +1,29 @@
-import PortalCard from '@/src/features/portal/components/PortalCard';
+import PortalCard from "@/src/features/portal/components/PortalCard";
 import { projects } from "./data/projects.data";
 
 export default function PortalGallery() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
-      <div className="mb-16 text-center">
-        <h1 className="text-4xl font-bold text-white mb-4">
-          Demo Applications
-        </h1>
-        <p className="text-slate-400">
-          Explore our industrial IoT solutions.
-        </p>
-      </div>
+    <section className="relative py-24">
+      <div className="max-w-6xl mx-auto px-6">
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
-          <PortalCard key={project.id} project={project} />
-        ))}
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
+            Industrial Applications
+          </h1>
+          <p className="text-slate-400 text-lg leading-relaxed">
+            Production-ready IoT solutions designed for real-time monitoring,
+            predictive maintenance, and smart industrial automation.
+          </p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {projects.map((project) => (
+            <PortalCard key={project.id} project={project} />
+          ))}
+        </div>
+
       </div>
     </section>
   );
