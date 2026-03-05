@@ -6,10 +6,12 @@ export interface PortalProject {
   id: string;
   name: string;
   description: string;
+  features: string[];      // ← add this
   icon: LucideIcon;
   href: string;
   status: ProjectStatus;
   color: string;
   bg: string;
   border: string;
+  iconBg: string;          // ← add this
 }
