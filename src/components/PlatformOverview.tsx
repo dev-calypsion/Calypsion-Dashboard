@@ -115,7 +115,7 @@ export default function PlatformOverview() {
           <h2 className="text-xl font-semibold text-white tracking-tight">Platform Overview</h2>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-6 items-start">
+        <div className="grid grid-cols-1 @min-[700px]:grid-cols-[1fr_1.4fr] gap-6 items-start">
 
           {/* ── LEFT: Project tabs ── */}
           <div className="flex flex-col gap-2">
