@@ -6,9 +6,10 @@ import { PortalProject } from "../types";
 
 interface Props {
   project: PortalProject;
+  onHover?: () => void;
 }
 
-export default function PortalCard({ project }: Props) {
+export default function PortalCard({ project, onHover }: Props) {
   const Icon = project.icon;
 
   return (
@@ -16,6 +17,8 @@ export default function PortalCard({ project }: Props) {
       className={`group relative rounded-2xl border ${project.border} ${project.bg} p-6
         transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30
         flex flex-col gap-4`}
+      onMouseEnter={onHover}
+      onFocus={onHover}
     >
       {/* Status badge */}
       <div className="absolute top-4 right-4">

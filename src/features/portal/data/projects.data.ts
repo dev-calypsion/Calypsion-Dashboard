@@ -21,6 +21,7 @@ export const projects: PortalProject[] = [
     bg: "bg-cyan-500/5",
     border: "border-cyan-500/20",
     iconBg: "bg-cyan-500/10",
+    industries: ["Automotive", "Electronics", "Process Plants"],
   },
   {
     id: "predictive-maintenance",
@@ -34,6 +35,7 @@ export const projects: PortalProject[] = [
     bg: "bg-blue-500/5",
     border: "border-blue-500/20",
     iconBg: "bg-blue-500/10",
+    industries: ["Heavy Industry", "Process Plants", "Energy"],
   },
   {
     id: "rtls",
@@ -47,6 +49,7 @@ export const projects: PortalProject[] = [
     bg: "bg-violet-500/5",
     border: "border-violet-500/20",
     iconBg: "bg-violet-500/10",
+    industries: ["Warehousing", "Automotive", "Electronics"],
   },
   {
     id: "production-flow",
@@ -60,6 +63,7 @@ export const projects: PortalProject[] = [
     bg: "bg-emerald-500/5",
     border: "border-emerald-500/20",
     iconBg: "bg-emerald-500/10",
+    industries: ["Process Plants", "Heavy Industry"],
   },
   {
     id: "energy-monitoring",
@@ -73,6 +77,7 @@ export const projects: PortalProject[] = [
     bg: "bg-yellow-500/5",
     border: "border-yellow-500/20",
     iconBg: "bg-yellow-500/10",
+    industries: ["Energy", "Process Plants"],
   },
   {
     id: "live-production",
@@ -86,5 +91,6 @@ export const projects: PortalProject[] = [
     bg: "bg-orange-500/5",
     border: "border-orange-500/20",
     iconBg: "bg-orange-500/10",
+    industries: ["Automotive", "Heavy Industry"],
   },
 ];

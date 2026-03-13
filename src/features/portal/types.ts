@@ -14,4 +14,5 @@ export interface PortalProject {
   bg: string;
   border: string;
   iconBg: string;          // ← add this
+  industries?: string[];
 }
