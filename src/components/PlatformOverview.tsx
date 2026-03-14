@@ -20,7 +20,7 @@ const projects = [
     iconBg: "bg-cyan-500/10",
     glow: "shadow-[0_0_30px_rgba(0,194,255,0.15)]",
     // Replace with your actual preview image paths in /public
-    preview: "/previews/smart-oee.png",
+    preview: "smart-oee.gif",
   },
   {
     id: "predictive-maintenance",
@@ -34,7 +34,7 @@ const projects = [
     border: "border-blue-500/30",
     iconBg: "bg-blue-500/10",
     glow: "shadow-[0_0_30px_rgba(59,130,246,0.15)]",
-    preview: "/previews/predictive-maintenance.png",
+    preview: "ohmium.gif",
   },
   {
     id: "rtls",
@@ -48,7 +48,7 @@ const projects = [
     border: "border-violet-500/30",
     iconBg: "bg-violet-500/10",
     glow: "shadow-[0_0_30px_rgba(139,92,246,0.15)]",
-    preview: "/previews/rtls.png",
+    preview: "Sewio-RTLS-Indoor-Tracking-2022-v7.gif",
   },
   {
     id: "production-flow",
